@@ -4,12 +4,13 @@ import TiSocialFacebookCircular from 'react-icons/lib/ti/social-facebook-circula
 import FacebookLogin from 'react-facebook-login'
 
 import { connect } from 'react-redux'
-import {setFaceBookToken} from './actions/action'
+import {setFaceBookToken, setTwitterUsername} from './actions/action'
 
 
 @connect((store) => {
   return {
-    fbkey: store.fbkey
+    fbkey: store.fbkey,
+    twittername: store.twittername
   }
 })
 export class App extends Component {
@@ -18,6 +19,11 @@ export class App extends Component {
     const responseFacebook = (response) => {
       console.log(response);
       this.props.dispatch(setFaceBookToken(response.accessToken))
+    }
+
+    const handleSubmit = () => {
+      console.log(this.props.value)
+      this.props.dispatch(setTwitterUsername(this.props.value))
     }
 
     return (
@@ -30,6 +36,16 @@ export class App extends Component {
             callback={responseFacebook}
             icon={<TiSocialFacebookCircular />}
           />
+
+          <form onSubmit={this.handleSubmit}>
+        <label>
+          Twitter Username
+          <input type="text" value={this.props.value}  />
+           </label>
+            <input type="submit" value="Submit" />
+          </form>
+   
+
       </div>
     );
   }

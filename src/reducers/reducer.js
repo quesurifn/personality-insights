@@ -1,7 +1,8 @@
 export function reducer(
     state={
 
-            fbkey: ''
+            fbkey: '',
+            twittername: ''
     
     }, action) {
 
@@ -11,6 +12,12 @@ export function reducer(
             return {
                 ...state,
                 fbkey: action.payload
+            }
+        }
+        case "TWITTERNAME" : {
+            return {
+                ...state,
+                twittername: action.payload
             }
         }
         default: {
