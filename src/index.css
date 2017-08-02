@@ -36,3 +36,12 @@ body {
 						-webkit-transition: all .4s ease!important;
 						-ms-flex-positive: 1!important;
 }
+.twitter {
+	display: none;
+}
+.next {
+	display:none;
+}
+.facebook{
+	display: none;
+}
