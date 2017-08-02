@@ -14,6 +14,10 @@ import {setFaceBookToken, setTwitterUsername} from './actions/action'
   }
 })
 export class App extends Component {
+  componentDidMount() {
+    document.querySelector('.start-button').disabled = true;
+  }
+
 
   render() {
     const responseFacebook = (response) => {
@@ -26,16 +30,19 @@ export class App extends Component {
     const handleSubmit = (e) => {
       let arrow =  document.querySelector('.next')
       let twitter = document.querySelector('.twitter')
-      if (e.target.checkValidity()) {
       
+      if (e.target.checkValidity()) {
+      document.querySelector('.start-button').disabled = false;
       twitter.style.display = 'inline'
       this.props.dispatch(setTwitterUsername(e.target.value))
       //console.log(store.getState())
+      document.querySelector('.start-button').disabled = false;
       document.querySelector('.next').style.display = "inline"
     } else {
 
         arrow.style.display = 'none'
         twitter.style.display = 'none'
+        document.querySelector('.start-button').disabled = true;
       }
     }
 
@@ -79,7 +86,7 @@ export class App extends Component {
             </div>
 
                 <div>
-                  <button className="start-button">Start The Adventure</button> 
+                  <button className="start-button" disabled>Start The Adventure</button> 
                   <i className="fa fa-arrow-left next" aria-hidden="true"></i>
                 </div>
               </div>  
