@@ -1,8 +1,11 @@
 export function reducer(
-    state={
+    state = {
 
             fbkey: '',
-            twittername: ''
+            twittername: '',
+            loading: false,
+            refresh_complete: {},
+            refresh_error: {},
     
     }, action) {
 
@@ -18,6 +21,24 @@ export function reducer(
             return {
                 ...state,
                 twittername: action.payload
+            }
+        }
+        case "LOADING" : {
+            return {
+                ...state,
+                loading: true
+            }
+        }
+        case "REFRESH_COMPLETE" : {
+            return {
+                ...state, 
+                refresh_complete: action.payload
+            }
+        }
+        case "REFRESH_ERROR" : {
+            return {
+                ...state, 
+                refresh_error: action.payload
             }
         }
         default: {
