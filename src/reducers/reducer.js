@@ -1,11 +1,12 @@
 export function reducer(
     state = {
 
-            fbkey: '',
+            fbkey: {},
             twittername: '',
             loading: false,
             refresh_complete: {},
             refresh_error: {},
+            response:{}
     
     }, action) {
 
@@ -27,6 +28,12 @@ export function reducer(
             return {
                 ...state,
                 loading: true
+            }
+        }
+        case "AJAXRESPONSE": {
+            return { 
+                ...state,
+                response: action.payload
             }
         }
         case "REFRESH_COMPLETE" : {

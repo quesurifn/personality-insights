@@ -103,3 +103,13 @@ button:hover, .start-button:hover{
   font-size: 30px;
   color:green;
 }
+.Loader__background {
+  height: 100vh !important;
+  margin-top: -100px;
+}
+.Loader__foreground {
+  height: 100vh !important;
+}
+.Loader__message {
+  height:100vh !important;
+}
