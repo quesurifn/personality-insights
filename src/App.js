@@ -4,6 +4,7 @@ import {Home} from './Home'
 
 import {Loading} from './Loading'
 import {Final} from './Final'
+import {StepTwo} from './StepTwo'
 
 
 export const App = () => (
@@ -11,7 +12,7 @@ export const App = () => (
     <main>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/loading" component={Loading} />
+        <Route exact path="/login" component={StepTwo} />
         <Route exact path="/results" component={Final} /> 
         <Route path='*' component={Home} />
       </Switch>

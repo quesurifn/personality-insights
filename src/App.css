@@ -113,3 +113,26 @@ button:hover, .start-button:hover{
 .Loader__message {
   height:100vh !important;
 }
+.selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.selection button{
+  color:#333;
+  margin: 40px 20px; 
+  border: none;
+  height: 50px;
+  padding: 0 3rem;
+  font-size: 18px;
+}
+.selection button:hover {
+  color:white;
+}
+
+.selection h1 {
+  color: white;
+}
