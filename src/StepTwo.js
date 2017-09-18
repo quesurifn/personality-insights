@@ -61,14 +61,6 @@ export class StepTwo extends Component {
         <Loader show={this.props.loading} message={'loading'}>
          
          <div className="login">
-
-           <br />
-           <br />
-
-            <h1 className="repressed-title">Personality Insights by:</h1>
-            <h3 className="repressed-title">@kylecrfahey</h3>
-
-
             <br /> 
             <br /> 
             <br />

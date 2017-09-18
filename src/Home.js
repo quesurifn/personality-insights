@@ -17,12 +17,17 @@ export class Home extends Component {
     return (
       <div className="App">
         <div className='selection'>
-          <h1>Would you like to compare your personality with a friend?</h1>
+          <h1 className="repressed-title">Personality Insights</h1>
+          <h3>Would you like to compare your personality with a friend?</h3>
           <div className='buttonFlex'>
-            <button>Compare</button>
-            <button>Don't Compare</button>
+            <button onClick={() => this.props.history.push('/login/comparar')}>Compare</button>
+            <button onClick={() => this.props.history.push('/login/nocompares')}>Don't Compare</button>
+          </div>
+          <div className='modest-credit'>
+            <small>@kylecrfahey</small>
           </div>
         </div>
+        
       </div>
     );
   }
