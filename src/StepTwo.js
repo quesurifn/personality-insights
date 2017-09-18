@@ -64,6 +64,7 @@ export class StepTwo extends Component {
     let compare = '/login/comparar'
     compare = this.props.location.pathname === compare ? true : false
 
+    const buttonText = compare ? 'CONTINUE' : 'START THE ADVENTURE'
 
     return (
       <div className="App">
@@ -99,7 +100,7 @@ export class StepTwo extends Component {
             </div>
 
                 <div>
-                  <button onClick={this.start}  className="start-button" >Start The Adventure</button> 
+                  <button onClick={this.start}  className="start-button" >{buttonText}</button> 
                   <i className="fa fa-arrow-left next" aria-hidden="true"></i>
                 </div>
               </div>  
