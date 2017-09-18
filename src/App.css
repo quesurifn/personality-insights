@@ -133,7 +133,7 @@ button:hover, .start-button:hover{
   color:white;
 }
 
-.selection h1, .selection h2, .selection h3 {
+h1,h2,h3 {
   color: white;
 }
 .selection h1 {
@@ -145,3 +145,4 @@ button:hover, .start-button:hover{
   right: 20px;
   color:#333333;
 }
+

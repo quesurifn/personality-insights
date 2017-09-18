@@ -23,6 +23,10 @@ export class StepTwo extends Component {
 
 
   }  
+
+  componentDidMount() {
+    console.log(this.props.location.pathname)
+  }
   
 
   start() {
@@ -56,16 +60,22 @@ export class StepTwo extends Component {
       }
     }
 
+
+    let compare = '/login/comparar'
+    compare = this.props.location.pathname === compare ? true : false
+
+
     return (
       <div className="App">
         <Loader show={this.props.loading} message={'loading'}>
          
          <div className="login">
-            <br /> 
-            <br /> 
-            <br />
-            <br />
 
+           {compare ? (
+             <h3>First Person</h3>
+            ) : (
+             <h3>Login</h3>
+            )}
 
             <div className="inline-icons">
               <FacebookLogin
